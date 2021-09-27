@@ -1,0 +1,88 @@
+#container{
+    margin:40px auto;
+    border:1px solid rgb(245, 231, 231);
+    width:400px;
+    height:500px;
+    border-radius: 5%;
+     background-color: white;
+   
+}
+
+.studentPage{
+    /* background-color: rgb(14, 172, 96); */
+    background: linear-gradient(#7696b1, #293f50);
+   margin: 0px;
+   height: 800px;
+
+
+}
+.studentDetails{
+   margin-top: 30px;
+   padding:10px 60px;
+}
+.studentResults{
+    padding:0px 60px;
+    text-align: center;
+    font-size: 30px;
+
+}
+.studentDetails h4{
+}
+.resultsViewForm{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+#regNo{
+    width:300px;
+    height:30px;
+    border: 1px solid lightgrey;
+    border-radius: 200px;
+    padding-bottom: 10px;
+}
+.depLabel{
+    padding-bottom: 4px;
+}
+#dep{
+    height: 60px;
+    width: 300px;
+   
+    
+}
+.dep{
+    width:300px;
+    height:40px;
+    border-radius: 9999px;
+    padding-bottom: 10px ;
+    padding-top:10px ;
+    border: 1px solid lightgrey;
+
+
+}
+
+
+
+.submitPurple{
+    height: 30px;
+}
+.purple{
+    /* background-color: rgb(41, 236, 142); */
+    background: linear-gradient(#49708f, #293f50);
+
+
+    width:300px;
+    height:40px;
+    border-radius: 9999px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid lightgrey;
+
+
+}
+#StudentPassword{
+    width:300px;
+    height:30px;
+    border-radius: 9999px;
+    padding-bottom: 10px;
+    border: 1px solid lightgrey;
+}
