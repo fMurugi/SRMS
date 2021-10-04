@@ -1,11 +1,12 @@
 var createError = require('http-errors');
 var express = require('express');
+var sessions = require('express-session')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
-var resultsRouter = require('./routes/results');
+var resultsRouter = require('./routes/resultsPage');
 
 var app = express();
 
@@ -38,5 +39,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const oneDay = 1000 * 60 * 60 *24;
+
+app.use(sessions({
+  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false
+}));
 
 module.exports = app;

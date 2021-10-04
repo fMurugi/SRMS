@@ -18,8 +18,23 @@ router.post('/',(req,res)=>{
     const reg = req.body.regNo;
     const dep = req.body.dep;
     console.log("data stored in variables:" ,reg )
-    res.end(JSON.stringify(req.body))
+    res.redirect(`/${reg}`)
 });
+
+
+
+// department           |
+// | students             |
+// | studentsresults      |
+// | subjectanddepartment |
+// | subjects 
+
+
+// select students.studentId, studentsresults.marks, subjects.subjectsName, subjects.subjectCode 
+// from students  
+// join studentsresults on students.studentId = studentsresults.studentId  
+// left join subjects on subjects.subjectId = studentsresults.subjectId
+// where students.studentId = 2;
 
 
 

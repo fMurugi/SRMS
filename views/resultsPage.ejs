@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #bigBody{
+           margin: 0px;
+        }
+        #container{
+            margin: 0px;
+            /* min-width: 100vw; */
+        }
+        #topic{
+            background-color: rgb(16, 16, 71);
+            height: 150px;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+           
+            
+        }
+        #studentName{
+            color: white;
+            font-size: 15px;
+            
+        }
+        
+        #schoolTitle {
+            color: aliceblue;
+            font-family: sans-serif;
+            padding:8px;
+            font-size: 20px;
+            width: 200px;
+            height:100px
+        }
+        
+        #content{
+            margin-top: 5px;
+            min-height: 700px;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        #sidebar{
+            background-color: rgb(16, 16, 71);
+            height:750px;
+            width:250px;
+        }
+        #sidebar a{
+            color: white;
+            display: block;
+            padding: 15px;
+            font-size: 16px;
+        }
+        #adiv{
+            height:40px;
+            margin-top: 15px;
+        }
+        #sidebar a:hover{
+            cursor: pointer;
+            background-color: rgb(2, 2, 15);
+        }
+        #myGrd{
+            width:990px;
+            height: 90px;
+            background-color: rgba(220,220,220);
+            margin-left: 40px;
+            border: 2px solid rgb(185, 185, 185);
+        }
+        #myGrd h3 ,span{
+            padding-left: 5px;
+        }
+        #outerContainer{
+            border: 1px solid rgb(220,220,220);
+            margin: 40px;
+                    
+        }
+        #outerContainer div h3{
+            padding: 12px;
+        }
+        #innerContainer{
+            border: 1px solid rgb(220,220,220);
+            margin: 15px 15px;
+            
+        }
+        #innerContainerSub{
+            display: flex;
+            justify-content:flex-end;
+            padding: 20px;
+        }
+        #totalmarks{
+            display: flex;
+            justify-content: center;
+            padding-bottom:20px;
+        }
+        #grdTable{
+            margin: 20px 20px 50px 20px ;
+        }
+        #grdTable table{
+            border-collapse: collapse;
+            width: 900px;
+        }
+        #grdTable td,th{
+            border: 1px solid grey;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        #grdTable tr{
+            height: 40px;
+        }
+        #right{
+           width: 400px;
+           height: 250px;
+           margin-left: 40px;
+           border: 1px solid rgb(199, 197, 197);
+        }
+        #footer{
+            height: 30px;
+            background-color: rgb(21, 21, 104);
+        }
+    </style>
+    <div id="container">
+        <div id="topic">
+            <div id="schoolLogo">
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitPcpODTOrXjni7ldqsvOWiYx9xSHuQ56Kg&usqp=CAU"height="150px" > -->
+            </div>
+            <div id="schoolTitle"> Hogwarts School of Witchcraft and Wizardry  
+            </div>
+            <%
+            console.log(userDetails)
+             userDetails.forEach(function(studentData){
+             %>
+            <div id ="studentName"> Hello <%=studentData.LastName %> ! </div>
+            <%  ; }) %>
+                                
+        </div>
+        <div id="content">
+            <div id="sidebar"> 
+                <div id="adiv"> 
+                    <a> campus info </a>
+                </div>
+                <div id="adiv"> 
+                    <a> my grades </a>
+                </div>
+                <div id="adiv"> 
+                    <a> my profile</a>
+                </div>
+                <div id="adiv"> 
+                    <a> fee statement</a>
+                </div>
+                <div id="adiv"> 
+                    <a> student services</a>
+                </div>
+                <div id="adiv"> 
+                    <a> my career</a>
+                </div>
+                <div id="adiv"> 
+                    <a> ICT support</a>
+                </div>
+
+
+
+            </div>
+            <div id="mainContent">
+                <div id="myGrd">
+                    <h3>My Grades</h3>
+                    <span>view all your grades here of the subjects you have completed</span>
+                </div>
+                <div id="outerContainer">
+                    <div> 
+                        <h3>Grades</h3>
+                    </div>
+                    <div id="innerContainer">
+                        <div id="innerContainerSub"><input type="text" name="subjectSearch" placeholder="search"></div>
+                        <div id="grdTable">
+                            <table border ="1">
+                                <tr>
+                                    <th>COURSE CODE</th>
+                                    <th>COURSE title</th>
+                                    <th>CREDIT EARNED</th>
+                                    <th>MARKS</th>
+                                    
+                
+                                </tr>
+                                <%
+                                if(results.length!=0){
+                                    var i=1;
+                                    results.forEach(function(data){
+                                 %>
+                                 <tr>
+                                    <!-- <td><%=i; %></td> -->
+                                    <td><%=data.subjectCode %></td>
+                                    <td><%=data.subjectsName %></td>
+                                    <td><%=data.creditsEarned %></td>
+                                    <td><%=data.marks %></td>
+                                   
+                                </tr>
+                                <%  i++; }) %>
+                                <% } else{ %>
+                                    <tr>
+                                        <td colspan="7">No Data Found</td>
+                                    </tr>
+                                <% } %>
+                            </table>
+                
+                        </div>
+                        <div id="totalmarks">
+                            <span>Total Marks =</span>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+                <div id="right">
+                    <div id="date">
+                        <p id="todayDate"></p>
+                        <script>
+                            const d = new Date();
+                            document.getElementById("todayDate").innerHTML= d;
+                        </script>
+                    
+
+                    </div>
+                    <div id="print"></div>
+                    <div id="tel">
+
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <div id="footer"> 
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
