@@ -1,11 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOGWARTS</title>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/homePage.css' />
+</head>
+<body id="bod">
+    <style>
+    #bod{
+        margin: 0;
+        
+    }
+     #top{
+    background-color: rgb(84, 34, 14);
+    height: 100px;
+    width: 100%;
+    display: flex;
+
+}
+    #logo{
+        width: 100px;
+        height: 100px;
+        margin-left:60px ;
+    }
+    #logo img{
+        width:100%;
+        height: 100%;
+    }
+    #title{
+        color: white;
+        margin-left: 40px;
+    }
+    #mainContainer{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+    }
+    #Intro{
+        text-align: center;
+    }
+    #Intro h3 {
+        /* margin-left:350px; */
+        font-size: 35px;
+    }
+    #Intro p{
+        font-size: 18px;
+    }
+    #Intro{
+
+    }
+    #secondPart{
+        margin-top: 50px;
+       
+    }
+    #secondPartCon{
+        margin: 0 auto;
+        display: block;
+        width: 75%;   
+ }
+    #content{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    #content>div>p{
+        margin-left: 45px;
+    }
+    #pics{
+        width: 100%;
+    }
+    #classes{
+        height: 150px;
+        width:200px;
+        border: 15px solid rgb(84, 34, 14);
+    }
+    #students{
+        height: 150px;
+        width:200px;
+        border: 15px solid rgb(84, 34, 14);
+    }
+    #staff{
+        height: 150px;
+        width:200px;
+        border: 15px solid rgb(84, 34, 14);
+    }
+    #footer{
+        height: 30px;
+        background-color:rgb(84, 34, 14) ;
+    }
+    
+    </style>
+    <div id="mainContainer">
+        <div id="top">
+            <div id="logo">
+                <img src="../public/images/hogNew.png" alt="">
+            </div>
+            <div id="title">
+                <h2>Hogwarts </h2>
+                <p><i>School of Witchcraft and ..</i></p>
+            </div>
+        </div> 
+        <div id="secondPart">
+            <div id="secondPartCon">
+                <div id="Intro"> 
+                    <h3>self-service protal</h3>
+                    <p>
+                        Log into the portal to view your academic information, receive personalized communication, and use our self-service tools.
+                    </p>
+                </div>
+                <div id="content">
+                    <div>
+                        <div id ="classes"> 
+                            <img src="https://i.pinimg.com/564x/19/75/36/1975364d1f8d94a55ca25823f6a8749f.jpg" width="200px" height="150px">
+                        </div>
+                        <p>COURSES</p>
+                    </div>
+                    <div>
+                        <div id="students">
+                            <a href="http://localhost:3000/students"><img src="https://www.tyla.com/cdn-cgi/image/width=648,quality=70,format=webp,fit=pad,dpr=1/https%3A%2F%2Fs3-images.tyla.com%2Fs3%2Fcontent%2Fee75cd375f7d5c80bcc39f7e73e19197.png" width="200px" height="150px">
+                            </a>
+                        </div>
+                        <p>STUDENTS</p>
+                    </div>
+                    <div>
+                        <div id="staff">
+                            <a href="http://localhost:3000/staff"><img src="https://i.pinimg.com/564x/0d/24/fe/0d24fef2566308047806149120dbba9a.jpg" width="200px" height="150px">
+                            </a>                       
+                         </div>
+                        <p>STAFF </p>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
