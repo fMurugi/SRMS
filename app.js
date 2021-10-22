@@ -1,9 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
-var sessions = require('express-session')
+var session = require('express-session')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+
 var studentsRouter = require('./routes/students');
 var authRouter = require('./routes/auth');
 var resultsPage = require('./routes/resultsPage');
@@ -49,13 +51,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const oneDay = 1000 * 60 * 60 *24;
-
-app.use(sessions({
-  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false
-}));
+const sessionOptions = require('./session');
+app.use(session(sessionOptions))
 
 module.exports = app;
