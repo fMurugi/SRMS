@@ -8,6 +8,7 @@
 </head>
 <body id="bod">
     <style>
+        
         #bod{
             margin: 0px,5px;
         }
@@ -23,16 +24,35 @@
             height: 150px;
             padding: 0px;
             margin: 0px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
+           
            
             
         }
+        #schlDetails{
+            display: flex;
+            justify-content: space-between;
+            margin: 0px 30px;
+
+        }
+        #firstPart{
+            display: flex;
+            justify-content: space-around;
+            margin: 0px 30px;
+        }
+        #secondPart{
+        }
+        #schoolLogo{
+            width:150px ;
+            height: 150px;
+        }
+        #schoolLogo img{
+            width: 100%;
+            height: 100%;
+        }
         #studentName{
             color: white;
-            font-size: 15px;
+            font-size: 20px;
+            margin: auto  200px;
             
         }
         
@@ -42,7 +62,8 @@
             padding:8px;
             font-size: 20px;
             width: 200px;
-            height:100px
+            height:100px;
+            margin:auto 5px;
         }
         
         #content{
@@ -62,7 +83,7 @@
             color: white;
             display: block;
             padding: 15px;
-            font-size: 16px;
+            font-size: 20px;
         }
         #adiv{
             height:40px;
@@ -133,19 +154,27 @@
     </style>
     <div id="container">
         <div id="topic">
-            <div id="schoolLogo">
-                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitPcpODTOrXjni7ldqsvOWiYx9xSHuQ56Kg&usqp=CAU"height="150px" > -->
+            <div id="schlDetails">
+                <div id="firstPart">
+                    <div id="schoolLogo">
+                        <img src="/images/hogNew.png" >
+                    </div>
+                    <div id="schoolTitle"> Hogwarts School of Witchcraft and Wizardry  
+                  
+                </div>
+                         
             </div>
-            <div id="schoolTitle"> Hogwarts School of Witchcraft and Wizardry  
-            </div>
+            <div id="secondPart">
+            </div id="studentIdentity">
             <%
             console.log(userDetails)
              userDetails.forEach(function(studentData){
              %>
             <div id ="studentName"> Hello <%=studentData.LastName %> ! </div>
             <%  ; }) %>
-                                
-        </div>
+               
+             </div>    
+            </div>
         <div id="content">
             <div id="sidebar"> 
                 <div id="adiv"> 

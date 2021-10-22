@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href='/stylesheets/studentReg.css' />
+    <title>create a new account</title>
+</head>
+<body class="studentPage">
+        <div id="container">
+            <div class="studentResults">
+                <h4>HOGWARTS</h4>
+            </div>
+            <div class="studentDetails">
+                    <form class ="resultsViewForm" action="http://localhost:3000/auth/register" method="POST">
+                        <div id="">
+                            <input type="text" id="Fname"name="Fname"placeholder=" First Name" ></div><br>
+                            <div id="">
+                                <input type="text" id="Sname"name="Sname"placeholder=" Second Name" ></div><br>
+                    <div id="">
+                    <input type="text" id="regNo"name="regNo"placeholder="Registration No" ></div><br>
+                    <div id="dep">
+                        <!-- <label class="depLabel"name="department" for="dep">Department</label><br> -->
+                        <select class="dep" name="department" placeholder="Department" >
+                            <option value=""disabled selected>Choose your Department</option>
+                            <option value="211">211</option>
+                            <option value="212">212</option>
+                            <option value="213">213</option>
+                            <option value="214">214</option>
+                        </select>
+                    </div><br>
+                   <div>
+                       <input type="password" name="password" id="StudentPassword" placeholder="Your Password">
+                   </div><br>
+                   <div>
+                    <input type="password"name="ConfirmedPassword" id="StudentPassword" placeholder="confirm password">
+                </div><br>
+                    <div class="submitPurple">              
+                          <input class="purple" type="submit" value="Register">
+                    </div>
+                    
+        
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

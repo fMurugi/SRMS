@@ -19,6 +19,7 @@
 .studentDetails{
    margin-top: 30px;
    padding:10px 60px;
+   overflow: hidden;
 }
 .studentResults{
     padding:0px 60px;
@@ -26,8 +27,7 @@
     font-size: 30px;
 
 }
-.studentDetails h4{
-}
+
 .resultsViewForm{
     display: flex;
     flex-direction: column;
@@ -85,4 +85,7 @@
     border-radius: 9999px;
     padding-bottom: 10px;
     border: 1px solid lightgrey;
+}
+.register{
+    margin-top: 20px;
 }

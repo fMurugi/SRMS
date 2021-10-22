@@ -7,13 +7,19 @@ router.get('/', function(req, res, next) {
   res.render('students');
 });
 
-router.post('/',(req,res)=>{
-  console.log("boyParser:",req.body)
-  const reg = req.body.regNo;
-  const dep = req.body.dep;
-  console.log("data stored in variables:" ,reg )
-  res.redirect(`/results/${reg}`)
-});
+// get the registration page
+// router.get('/register',function(req,res){
+//   res.render('studentReg')
+// })
+
+// router.post('/',(req,res)=>{
+//   console.log("boyParser:",req.body)
+//   const reg = req.body.regNo;
+//   const dep = req.body.dep;
+//   console.log("data stored in variables:" ,reg )
+ 
+//   res.redirect(`/results/${reg}`)
+// });
 
 
 

@@ -15,7 +15,7 @@
                 <h4>HOGWARTS</h4>
             </div>
             <div class="studentDetails">
-                    <form class ="resultsViewForm" action="http://localhost:3000/students" method="POST">
+                    <form class ="resultsViewForm" action="http://localhost:3000/auth/login" method="POST">
                     <div id="">
                     <input type="text" id="regNo"name="regNo"placeholder="Registartion No" ></div><br>
                     <div id="dep">
@@ -28,11 +28,18 @@
                         </select>
                     </div><br>
                    <div>
-                       <input type="password" id="StudentPassword" placeholder="Your Password">
+                       <input type="password" name="password" id="StudentPassword" placeholder="Your Password">
                    </div><br>
                     <div class="submitPurple">              
                           <input class="purple" type="submit" value="Login">
                     </div>
+                    <div class="register">    
+                        <span><a href="#"> forgot password</a></span>      
+                        <span><a href="http://localhost:3000/auth/register">create account</a></span>          
+    
+                  </div>
+        
+
             </form>
         </div>
     </div>
