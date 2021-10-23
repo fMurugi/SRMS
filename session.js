@@ -15,7 +15,7 @@ const sessionOptions = {
   sessionName: sessionName,
   secret: process.env.SESSION_SECRET || 'whisper',
   saveUninitialized:false,
-    resave: false,
+  resave: false,
 }
 
 module.export=sessionOptions;

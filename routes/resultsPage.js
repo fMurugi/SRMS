@@ -10,7 +10,8 @@ var db=require('../database');
 
 
 
-router.get('/:adminNo', function(req, res, next) {
+router.get('/:adminNo',  function(req, res, next) {
+  isLoggedIn(req,res);
   var reg = req.params.adminNo;
   console.log(reg)
   var sql =  `select  students.studentId, studentsresults.marks, subjects.subjectsName, subjects.subjectCode  from students   join studentsresults on students.studentId = studentsresults.studentId left join subjects on subjects.subjectId = studentsresults.subjectId where students.RegNo = ${reg}`;
