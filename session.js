@@ -6,16 +6,16 @@ const oneDay = 1000 * 60 * 60 *24;
 const sessionName = 'SRMS';
 
 const sessionOptions = {
-  store: new SqliteStore(),
+  sessionName: sessionName,
+  secret: process.env.SESSION_SECRET || 'whisper',
+  saveUninitialized:true,
+  resave: false,
+  store: new SqliteStore({db:'sessions.sqlite'}), //TODO make configurable
   cookie: {
     httpOnly: true,
     secure: false,
     maxAge: oneDay
-  },
-  sessionName: sessionName,
-  secret: process.env.SESSION_SECRET || 'whisper',
-  saveUninitialized:false,
-  resave: false,
+  }
 }
 
-module.export=sessionOptions;
+module.exports={sessionOptions,sessionName};
