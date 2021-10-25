@@ -39,8 +39,7 @@
             justify-content: space-around;
             margin: 0px 30px;
         }
-        #secondPart{
-        }
+        
         #schoolLogo{
             width:150px ;
             height: 150px;
@@ -53,6 +52,15 @@
             color: white;
             font-size: 20px;
             margin: auto  200px;
+            
+        }
+        .logout{
+            display: flex;
+            align-items: center;
+        }
+        .logout>a{
+            color: white;
+            font-size: 16px;
             
         }
         
@@ -172,8 +180,12 @@
              %>
             <div id ="studentName"> Hello <%=studentData.LastName %> ! </div>
             <%  ; }) %>
+            <div class="logout">
+                <a href="http://localhost:3000/auth/login">LogOut</a>
+            </div>  
                
-             </div>    
+             </div>  
+             
             </div>
         <div id="content">
             <div id="sidebar"> 

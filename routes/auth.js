@@ -5,10 +5,11 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
 const {isLoggedIn} = require('./decorator-utils')
+const sessionConfig = require('../session')
 
 /* GET users listing. */
 router.get('/login', function (req, res, next) {
-  res.send('Returns login html page');
+  res.render('students');
 });
 
 
@@ -24,16 +25,18 @@ router.post('/login', (req, res, next) => {
       let isPasswordCorrect = bcrypt.compareSync(password, results[0].password)
 
       if (isPasswordCorrect) {
+        console.log('REQ', req.session)
         req.session.regNo = reg
         // save session
+        
         req.session.save(() => void 0);
         res.redirect(`/results/${reg}`);
       } else {
         // TODO - add a message flash message ui field that displays this information
-        res.redirect('students', { message: 'Please check you account details' })
+        res.render('students', { message: 'Please check you account details' })
       }
     } else {
-      res.redirect('students', { message: 'Please check you account details' })
+      res.render('students', { message: 'Please check you account details' })
     }
   })
 
@@ -46,8 +49,8 @@ router.get('/register', function (req, res, next) {
 
 router.get('/logout', (req, res) => {
   req.session.destroy(() => void 0);
-  res.clearCookie(sessionName);
-  res.redirect(loginURL);
+  res.clearCookie(sessionConfig.sessionName);
+  res.redirect('/auth/login');
 })
 
 

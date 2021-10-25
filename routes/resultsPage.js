@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db=require('../database');
+var utils=require('./decorator-utils')
 
 
 /* GET home page. */
@@ -11,7 +12,7 @@ var db=require('../database');
 
 
 router.get('/:adminNo',  function(req, res, next) {
-  isLoggedIn(req,res);
+  utils.isLoggedIn(req,res);
   var reg = req.params.adminNo;
   console.log(reg)
   var sql =  `select  students.studentId, studentsresults.marks, subjects.subjectsName, subjects.subjectCode  from students   join studentsresults on students.studentId = studentsresults.studentId left join subjects on subjects.subjectId = studentsresults.subjectId where students.RegNo = ${reg}`;
